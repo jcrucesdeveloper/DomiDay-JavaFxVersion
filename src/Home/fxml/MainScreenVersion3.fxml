@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controllers.Controller">
+   <children>
+      <HBox prefHeight="73.0" prefWidth="600.0" style="-fx-background-color: #00A6A6;">
+         <children>
+            <Label id="lblDay" fx:id="lblDayOfWeek" alignment="CENTER" prefHeight="73.0" prefWidth="210.0" text="Wednesday 26 August" textFill="WHITE">
+               <font>
+                  <Font name="Cantarell Regular" size="17.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="73.0" prefWidth="489.0">
+               <children>
+                  <Button fx:id="btnAction" layoutX="365.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBtnPrintDate" text="Button" />
+                  <HBox layoutX="477.0" layoutY="8.0" prefHeight="26.0" prefWidth="25.0" spacing="10.0">
+                     <children>
+                        <Label alignment="BOTTOM_LEFT" contentDisplay="TOP" onMouseClicked="#handleBtnMinimize" prefHeight="15.0" prefWidth="28.0" text="---" textFill="WHITE">
+                           <font>
+                              <Font name="Cantarell Extra Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label onMouseClicked="#handleBtnExit" text="X" textFill="WHITE">
+                           <font>
+                              <Font name="Cantarell Extra Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children></HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
