@@ -10,43 +10,42 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Main extends Application {
-    static Stage window;
+
     private static double xOffset = 0;
     private static double yOffset = 0;
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        window = primaryStage;
+    public void start(Stage window) throws Exception{
+
         Parent root = FXMLLoader.load(getClass().getResource("fxml/MainScreen.fxml"));
 
 
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                xOffset = primaryStage.getX() - event.getScreenX();
-                yOffset = primaryStage.getY() - event.getScreenY();
+                xOffset = window.getX() - event.getScreenX();
+                yOffset = window.getY() - event.getScreenY();
             }
         });
 
         root.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                primaryStage.setX(event.getScreenX() + xOffset);
-                primaryStage.setY(event.getScreenY() + yOffset);
+                window.setX(event.getScreenX() + xOffset);
+                window.setY(event.getScreenY() + yOffset);
             }
         });
 
-        Scene principalScene = new Scene(root);
+        Scene principalScene = new Scene(root,720,520);
         principalScene.getStylesheets().add("Home/css/Principal.css");
-
-        window.setTitle("Hello World");
-        window.initStyle(StageStyle.UNDECORATED);
+        window.setTitle("DomiDay");
         window.setScene(principalScene);
+
+        window.sizeToScene();
         window.show();
+
     }
 
-    public static void minimizeWindow(){
-        window.setIconified(true);
-    }
+
 
 
     public static void main(String[] args) {

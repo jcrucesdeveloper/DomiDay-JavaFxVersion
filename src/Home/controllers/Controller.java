@@ -9,7 +9,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.application.Platform;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -31,24 +35,26 @@ public class Controller implements Initializable {
     private ListView<DomiItem> listViewDomi;
 
     @FXML
+    private ChoiceBox<String> choiceBoxHour;
+    @FXML
     private Button btnAddActivity;
     @FXML
     private TextField txtFieldActivity;
+
+
 
     @FXML
     public void handleBtnExit(){
         Platform.exit();
     }
     @FXML
-    public void handleBtnMinimize(){
-        Main.minimizeWindow();
-    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Put the day in the program when start
         lblDayOfWeek.setText(helper.getDay());
-
+        helper.initializeChoiceBox(choiceBoxHour);
         txtFieldActivity.setFocusTraversable(false);
 
 
