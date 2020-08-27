@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -18,7 +20,6 @@
             </Label>
             <AnchorPane prefHeight="73.0" prefWidth="489.0">
                <children>
-                  <Button fx:id="btnAction" layoutX="365.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBtnPrintDate" text="Button" />
                   <HBox layoutX="477.0" layoutY="8.0" prefHeight="26.0" prefWidth="25.0" spacing="10.0">
                      <children>
                         <Label alignment="BOTTOM_LEFT" contentDisplay="TOP" onMouseClicked="#handleBtnMinimize" prefHeight="15.0" prefWidth="28.0" text="---" textFill="WHITE">
@@ -34,6 +35,17 @@
                      </children></HBox>
                </children>
             </AnchorPane>
+         </children>
+      </HBox>
+      <HBox prefHeight="467.0" prefWidth="722.0">
+         <children>
+            <ListView opacity="0.95" prefHeight="394.0" prefWidth="192.0" style="-fx-background-color: FFFFFF;" fx:id="listViewDomi">
+               <HBox.margin>
+
+                  <Insets />
+               </HBox.margin>
+            </ListView>
+            <ScrollPane prefHeight="467.0" prefWidth="543.0" />
          </children>
       </HBox>
    </children>
