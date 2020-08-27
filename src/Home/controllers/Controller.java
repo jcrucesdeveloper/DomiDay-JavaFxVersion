@@ -7,11 +7,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.application.Platform;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
 
 import java.net.URL;
 import java.util.Calendar;
@@ -33,10 +30,11 @@ public class Controller implements Initializable {
     @FXML
     private ListView<DomiItem> listViewDomi;
 
-
     @FXML
-    public void handleBtnPrintDate(){
-    }
+    private Button btnAddActivity;
+    @FXML
+    private TextField txtFieldActivity;
+
     @FXML
     public void handleBtnExit(){
         Platform.exit();
@@ -50,6 +48,8 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Put the day in the program when start
         lblDayOfWeek.setText(helper.getDay());
+
+        txtFieldActivity.setFocusTraversable(false);
 
 
         ObservableList<DomiItem> domiItems = FXCollections.observableArrayList();

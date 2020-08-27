@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -33,19 +38,38 @@
                            </font>
                         </Label>
                      </children></HBox>
+                  <TextField layoutX="14.0" layoutY="27.0" prefHeight="32.0" prefWidth="241.0" fx:id="txtFieldActivity">
+
+                  </TextField>
+                  <ChoiceBox layoutX="264.0" layoutY="27.0" prefHeight="32.0" prefWidth="96.0" />
+                  <Button fx:id="btnAddActivity" layoutX="453.0" layoutY="29.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" text="Add" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Button>
+                  <Label layoutX="81.0" layoutY="6.0" text="Create and activity" textFill="WHITE">
+                     <font>
+                        <Font name="Cantarell Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="298.0" layoutY="3.0" text="Hour" textFill="WHITE" />
+                  <CheckBox layoutX="388.0" layoutY="32.0" mnemonicParsing="false" />
+                  <Label layoutX="369.0" layoutY="10.0" text="Important" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>
       </HBox>
       <HBox prefHeight="467.0" prefWidth="722.0">
          <children>
-            <ListView opacity="0.95" prefHeight="394.0" prefWidth="192.0" style="-fx-background-color: FFFFFF;" fx:id="listViewDomi">
+            <ListView fx:id="listViewDomi" opacity="0.95" prefHeight="394.0" prefWidth="192.0" style="-fx-background-color: FFFFFF;">
                <HBox.margin>
 
                   <Insets />
                </HBox.margin>
             </ListView>
-            <ScrollPane prefHeight="467.0" prefWidth="543.0" />
+            <ScrollPane prefHeight="467.0" prefWidth="543.0">
+               <effect>
+                  <Blend />
+               </effect></ScrollPane>
          </children>
       </HBox>
    </children>

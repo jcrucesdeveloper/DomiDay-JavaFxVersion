@@ -18,6 +18,7 @@ public class Main extends Application {
         window = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("fxml/MainScreen.fxml"));
 
+
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -34,10 +35,12 @@ public class Main extends Application {
             }
         });
 
+        Scene principalScene = new Scene(root);
+        principalScene.getStylesheets().add("Home/css/Principal.css");
 
         window.setTitle("Hello World");
         window.initStyle(StageStyle.UNDECORATED);
-        window.setScene(new Scene(root));
+        window.setScene(principalScene);
         window.show();
     }
 
