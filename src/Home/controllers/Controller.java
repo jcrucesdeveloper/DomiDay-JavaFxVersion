@@ -1,8 +1,8 @@
 package Home.controllers;
 
+import Home.DomiItemControl;
 import Home.DomiItem;
 import Home.HelperClass;
-import Home.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,11 +12,9 @@ import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
-import java.awt.*;
 import java.net.URL;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 
@@ -40,6 +38,8 @@ public class Controller implements Initializable {
     private Button btnAddActivity;
     @FXML
     private TextField txtFieldActivity;
+    @FXML
+    private VBox vboxDomiContainer;
 
 
 
@@ -47,7 +47,24 @@ public class Controller implements Initializable {
     public void handleBtnExit(){
         Platform.exit();
     }
+
     @FXML
+    public void handleBtnAdd(){
+        System.out.println("working");
+
+        System.out.println("workingx2");
+    }
+
+    public VBox getVboxDomiContainer(){
+        return vboxDomiContainer;
+    }
+
+    public void initializeDomiHours(){
+        for(int i  = 1 ; i < 25; i++){
+            vboxDomiContainer.getChildren().add(new DomiItemControl(i));
+        }
+    }
+
 
 
     @Override
@@ -56,6 +73,8 @@ public class Controller implements Initializable {
         lblDayOfWeek.setText(helper.getDay());
         helper.initializeChoiceBox(choiceBoxHour);
         txtFieldActivity.setFocusTraversable(false);
+
+        initializeDomiHours();
 
 
         ObservableList<DomiItem> domiItems = FXCollections.observableArrayList();

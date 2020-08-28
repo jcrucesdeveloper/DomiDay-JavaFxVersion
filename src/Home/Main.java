@@ -39,7 +39,6 @@ public class Main extends Application {
         principalScene.getStylesheets().add("Home/css/Principal.css");
         window.setTitle("DomiDay");
         window.setScene(principalScene);
-        System.out.println("Hello world");
 
         window.sizeToScene();
         window.show();

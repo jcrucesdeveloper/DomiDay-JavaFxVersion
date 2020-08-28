@@ -51,12 +51,13 @@ public  class HelperClass {
     }
 
     public static String parseHour(int hour){
-        if (hour < 10){
-            return "0" + Integer.toString(hour) + ":00";
-        }else{
-            return Integer.toString(hour) + ":00";
-        }
+        String strHour = "";
+        if (hour < 10) strHour+= "0";
+        strHour+= Integer.toString(hour) + ": 00";
+        if (hour > 12) strHour+= " PM";
+        else strHour+= " AM";
 
+        return strHour;
 
     }
 

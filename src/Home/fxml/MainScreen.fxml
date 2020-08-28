@@ -30,7 +30,7 @@
 
                   </TextField>
                  
-                  <Button fx:id="btnAddActivity" layoutX="453.0" layoutY="29.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="49.0" text="Add" textFill="WHITE">
+                  <Button fx:id="btnAddActivity" layoutX="453.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleBtnAdd" prefHeight="29.0" prefWidth="49.0" text="Add" textFill="WHITE">
                      <font>
                         <Font size="12.0" />
                      </font></Button>
@@ -49,16 +49,19 @@
       </HBox>
       <HBox prefHeight="467.0" prefWidth="722.0">
          <children>
-            <ListView fx:id="listViewDomi" opacity="0.95" prefHeight="394.0" prefWidth="192.0" style="-fx-background-color: FFFFFF;" HBox.hgrow="ALWAYS">
+            <ListView fx:id="listViewDomi" maxHeight="1.7976931348623157E308" opacity="0.95" prefHeight="394.0" prefWidth="192.0" style="-fx-background-color: FFFFFF;" HBox.hgrow="ALWAYS">
                <HBox.margin>
 
                   <Insets />
                </HBox.margin>
             </ListView>
-            <ScrollPane prefHeight="467.0" prefWidth="543.0" HBox.hgrow="ALWAYS">
+            <ScrollPane fx:id="scrollPanelDomi" hbarPolicy="NEVER" prefHeight="467.0" prefWidth="543.0" HBox.hgrow="ALWAYS">
                <effect>
                   <Blend />
-               </effect></ScrollPane>
+               </effect>
+               <content>
+                  <VBox fx:id="vboxDomiContainer"  />
+               </content></ScrollPane>
          </children>
       </HBox>
    </children>
