@@ -1,29 +1,35 @@
-package Home;
+package Home.controllers;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.beans.property.StringProperty;
+import Home.HelperClass;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class DomiItemControl extends HBox implements Initializable {
-    @FXML private Label lblHour;
+public class DomiItemController extends HBox implements Initializable {
+    @FXML
+    private Label lblHour;
+    @FXML
+    private VBox vBoxDomiContainer;
+
+
 
     private int numberHour;
+    private String color;
     private String activity;
 
-    public DomiItemControl(int numberHour) {
+    public DomiItemController(int numberHour,String color) {
         this.numberHour = numberHour;
+        this.color = color;
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-                "fxml/DomiFx.fxml"));
+                "../fxml/DomiFx.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -42,5 +48,10 @@ public class DomiItemControl extends HBox implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lblHour.setText(HelperClass.parseHour(numberHour));
+        lblHour.setStyle("-fx-background-color: " + color);
     }
+
+    public VBox getvBoxDomiContainer() { return vBoxDomiContainer;}
+
+
 }

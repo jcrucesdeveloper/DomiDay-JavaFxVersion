@@ -1,6 +1,5 @@
 package Home.controllers;
 
-import Home.DomiItemControl;
 import Home.DomiItem;
 import Home.HelperClass;
 import javafx.collections.FXCollections;
@@ -60,8 +59,12 @@ public class Controller implements Initializable {
     }
 
     public void initializeDomiHours(){
+        String color;
         for(int i  = 1 ; i < 25; i++){
-            vboxDomiContainer.getChildren().add(new DomiItemControl(i));
+            if (i % 2 == 0) color = "#ffe500";
+            else color = "#ffd100";
+
+            vboxDomiContainer.getChildren().add(new DomiItemController(i,color));
         }
     }
 

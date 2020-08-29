@@ -16,7 +16,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controllers.Controller">
    <children>
-      <HBox prefHeight="73.0" prefWidth="600.0" style="-fx-background-color: #00A6A6;">
+      <HBox prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #00A6A6;">
          <children>
             <Label id="lblDay" fx:id="lblDayOfWeek" alignment="CENTER" prefHeight="73.0" prefWidth="210.0" text="Wednesday 26 August" textFill="WHITE">
                <font>
